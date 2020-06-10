@@ -1,0 +1,5 @@
+n=int(input())
+arr=list(map(int,input().split()))
+m=max(arr)
+arr[:]=(i for i in arr if i!=m)
+print(max(arr))
