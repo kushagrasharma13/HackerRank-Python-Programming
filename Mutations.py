@@ -1,15 +1,13 @@
-def count_substring(s,ss):
-    count = start = 0
-    while True:
-        start = s.find(ss, start) + 1
-        if start > 0:
-            count+=1
+def mutate_string(string, position, character):
+    s=''
+    for i in range(len(string)):
+        if i==position:
+            s=s+character
         else:
-            return count
-
+            s=s+string[i]
+    return s
 if __name__ == '__main__':
-    string = input().strip()
-    sub_string = input().strip()
-    
-    count = count_substring(string, sub_string)
-    print(count)
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
